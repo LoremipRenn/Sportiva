@@ -1,0 +1,33 @@
+# Environment & Local Credentials
+.env
+.env.*
+config/database.local.php
+
+# IDE & Editor Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.superpowers/
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs & Temporary Files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Dependency Directories (if composer or npm added later)
+/vendor/
+/node_modules/

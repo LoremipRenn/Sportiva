@@ -1,0 +1,173 @@
+/* ==========================================================================
+   OTP VERIFICATION FLOW STYLES
+   Purpose: Multi-step spatial transition aligned with Arena Kinetic Navy
+   ========================================================================== */
+
+.otp-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: var(--surface-page);
+}
+
+.otp-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-height: 440px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 36px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.otp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--brand-navy-800) 0%, var(--brand-sky-500) 65%, var(--accent-volt) 100%);
+}
+
+.otp-progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.otp-progress-dot {
+  width: 28px;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--border-subtle);
+  transition: background-color var(--dur-normal) ease, transform var(--dur-normal) var(--ease-out);
+}
+
+.otp-progress-dot.active {
+  background: var(--brand-navy-800);
+  transform: scaleX(1.1);
+}
+
+.otp-step {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: cardEnter 320ms var(--ease-out) both;
+}
+
+.otp-step.active {
+  display: flex;
+}
+
+.otp-image {
+  width: 150px;
+  height: auto;
+  margin: 0 auto 24px auto;
+}
+
+.otp-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.otp-card p {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 360px;
+}
+
+.btn-confirm {
+  width: 100%;
+  min-height: 52px;
+  background: var(--brand-navy-800);
+  border-radius: var(--radius-md);
+  border: none;
+  color: var(--text-inverse);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(12, 58, 107, 0.2);
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
+}
+
+.btn-confirm:active {
+  transform: scale(0.98);
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.otp-inputs input {
+  width: 64px;
+  height: 68px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-subtle);
+  background: var(--surface-page);
+  text-align: center;
+  font-size: 24px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--brand-navy-900);
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.otp-inputs input:focus {
+  outline: none;
+  border-color: var(--brand-navy-800);
+  background: var(--surface-card);
+  box-shadow: 0 0 0 4px rgba(12, 58, 107, 0.12);
+  transform: translateY(-2px);
+}
+
+.success-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 24px auto;
+  border-radius: 50%;
+  border: 3px solid var(--brand-navy-800);
+  background: var(--brand-sky-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--brand-navy-800);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-confirm:hover {
+    background: var(--brand-navy-900);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 480px) {
+  .otp-card {
+    padding: 32px 20px;
+  }
+  .otp-inputs {
+    gap: 10px;
+  }
+  .otp-inputs input {
+    width: 56px;
+    height: 60px;
+    font-size: 20px;
+  }
+}

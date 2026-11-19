@@ -1,0 +1,249 @@
+/* ==========================================================================
+   HOME HERO SECTION & SLIDER STYLES
+   Purpose: Spatial consistency & smooth cross-fade with GPU scale(1.04 -> 1)
+   ========================================================================== */
+
+.hero-section {
+  flex-grow: 1;
+  min-height: calc(100vh - 76px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 48px;
+  overflow: hidden;
+  background-color: var(--brand-navy-950);
+  color: var(--text-inverse);
+}
+
+.slider-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 720ms var(--ease-out), transform 1100ms var(--ease-out);
+  pointer-events: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-backdrop-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 21, 51, 0.35) 0%,
+    rgba(6, 21, 51, 0.55) 55%,
+    rgba(6, 21, 51, 0.9) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-center-content {
+  position: relative;
+  z-index: 10;
+  margin: auto auto 24px auto;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Dose cap R-10: Single frosted glass card on the hero focal point */
+.info-box {
+  position: relative;
+  width: 100%;
+  padding: 36px 40px;
+  background: rgba(8, 31, 73, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  text-align: left;
+  overflow: hidden;
+  transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.info-box.is-switching {
+  opacity: 0.4;
+  transform: translateY(4px);
+}
+
+.info-box-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.info-box-progress-bar {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-volt);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.info-sport-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--accent-volt);
+  margin-bottom: 8px;
+}
+
+.info-box h1 {
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--text-inverse);
+}
+
+.info-box p {
+  font-size: clamp(15px, 1.8vw, 18px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 62ch;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
+}
+
+.hero-btn-primary {
+  background-color: var(--accent-volt);
+  color: var(--brand-navy-950);
+}
+
+.hero-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-inverse);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.hero-btn-primary:active,
+.hero-btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.slider-arrow {
+  position: relative;
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(8, 31, 73, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--text-inverse);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.slider-arrow:active {
+  transform: scale(0.94);
+}
+
+.slider-pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  transition: transform var(--dur-normal) var(--ease-out), background-color var(--dur-normal) ease;
+}
+
+.dot.active {
+  background-color: var(--accent-volt);
+  border-color: var(--accent-volt);
+  transform: scale(1.25);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-btn-primary:hover {
+    background-color: #b8f524;
+    transform: translateY(-2px);
+  }
+  .hero-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+  }
+  .slider-arrow:hover {
+    background-color: var(--brand-navy-800);
+    transform: scale(1.06);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 24px 16px;
+    align-items: flex-end;
+  }
+  .slider-arrow {
+    display: none;
+  }
+  .info-box {
+    padding: 24px 20px;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+}

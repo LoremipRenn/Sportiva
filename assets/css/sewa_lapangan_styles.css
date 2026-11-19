@@ -1,0 +1,618 @@
+/* ==========================================================================
+   SEWA LAPANGAN (VENUE DISCOVERY & FILTER) STYLES
+   ========================================================================== */
+
+.main-content {
+  flex-grow: 1;
+  padding: 36px 40px 64px;
+  max-width: 1360px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-intro {
+  margin-bottom: 24px;
+}
+
+.page-intro h1 {
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.page-intro p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+}
+
+/* Search & Filter Bar */
+.search-form {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background: var(--surface-card);
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 28px;
+}
+
+.input-group {
+  flex: 1 1 200px;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-page);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  height: 48px;
+  position: relative;
+  transition: border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+}
+
+.input-group:focus-within {
+  border-color: var(--brand-navy-800);
+  background-color: var(--surface-card);
+  box-shadow: 0 0 0 3px rgba(12, 58, 107, 0.1);
+}
+
+.input-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  margin-right: 10px;
+  flex-shrink: 0;
+  transition: color var(--dur-fast) ease;
+}
+
+.input-group:focus-within .input-icon {
+  color: var(--brand-navy-800);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}
+
+.input-group select {
+  padding-right: 20px;
+}
+
+.search-button,
+.filter-button {
+  height: 48px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 22px;
+  flex-shrink: 0;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.search-button {
+  background-color: var(--brand-navy-800);
+  color: var(--text-inverse);
+}
+
+.filter-button {
+  background-color: var(--brand-sky-50);
+  color: var(--brand-navy-800);
+  border: 1px solid var(--brand-sky-100);
+  padding: 0 16px;
+}
+
+.filter-button.has-active-price {
+  background-color: var(--brand-navy-800);
+  color: var(--text-inverse);
+}
+
+.filter-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.search-button:active,
+.filter-button:active {
+  transform: scale(0.97);
+}
+
+/* Results Toolbar */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.results-count {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.results-count strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.reset-filter-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-navy-800);
+  background: var(--brand-sky-50);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.sort-options {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-options select {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  min-height: 40px;
+  background: var(--surface-card);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+
+/* Venue Grid & Cards */
+.venue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 310px), 1fr));
+  gap: 24px;
+}
+
+.venue-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal) var(--ease-out), border-color var(--dur-normal) ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.venue-card a {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: var(--surface-subtle);
+}
+
+.venue-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms var(--ease-out);
+}
+
+.venue-city-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(8, 31, 73, 0.85);
+  color: var(--text-inverse);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.card-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.venue-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.venue-type {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--brand-navy-700);
+  font-weight: 700;
+}
+
+.venue-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.venue-rating-pill .icon-star {
+  width: 14px;
+  height: 14px;
+  color: var(--star-amber);
+}
+
+.card-info h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.venue-address-snippet {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.venue-sports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.sport-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--brand-navy-800);
+  background: var(--brand-sky-50);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.sport-item svg {
+  width: 14px;
+  height: 14px;
+  color: var(--brand-navy-800);
+}
+
+.card-bottom {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.venue-price {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.venue-price strong {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-navy-900);
+}
+
+.card-action-cue {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-navy-800);
+  background: var(--surface-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+
+/* Price Filter Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 21, 51, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-modal) var(--ease-out), visibility var(--dur-modal);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--surface-card);
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-subtle);
+  width: 100%;
+  max-width: 460px;
+  transform: scale(0.95) translateY(8px);
+  transition: transform var(--dur-modal) var(--ease-out);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-header h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  border: none;
+  font-size: 22px;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-subtitle {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.price-filter-inputs {
+  display: flex;
+  gap: 14px;
+}
+
+.price-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price-input-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price-input-group input {
+  width: 100%;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-subtle);
+  padding: 0 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.price-input-group input:focus {
+  border-color: var(--brand-navy-800);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(12, 58, 107, 0.1);
+}
+
+.modal-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  gap: 12px;
+}
+
+.clear-filter-btn {
+  flex: 1;
+  height: 46px;
+  background: var(--surface-subtle);
+  color: var(--text-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.apply-filter-btn {
+  flex: 2;
+  height: 46px;
+  background-color: var(--brand-navy-800);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+/* Empty State (R-27) */
+.no-results-container {
+  text-align: center;
+  padding: 64px 24px;
+  background-color: var(--surface-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.no-results-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--brand-sky-50);
+  color: var(--brand-navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-results-container h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.no-results-container p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  max-width: 420px;
+}
+
+.btn-reset-empty {
+  margin-top: 8px;
+  padding: 12px 24px;
+  background: var(--brand-navy-800);
+  color: var(--text-inverse);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Pagination */
+.pagination-container {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pagination li a,
+.pagination li span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+  color: var(--text-primary);
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  transition: border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+
+.pagination li.active a {
+  background-color: var(--brand-navy-800);
+  color: var(--text-inverse);
+  border-color: var(--brand-navy-800);
+}
+
+.pagination li.disabled span {
+  color: var(--text-muted);
+  border-color: transparent;
+  background: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .venue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-sky-100);
+  }
+  .venue-card:hover img {
+    transform: scale(1.04);
+  }
+  .venue-card:hover .card-action-cue {
+    background-color: var(--brand-navy-800);
+    color: var(--text-inverse);
+  }
+  .search-button:hover,
+  .apply-filter-btn:hover,
+  .btn-reset-empty:hover {
+    background-color: var(--brand-navy-900);
+  }
+  .filter-button:hover {
+    background-color: var(--brand-sky-100);
+  }
+  .pagination li:not(.active) a:hover {
+    border-color: var(--brand-navy-800);
+    color: var(--brand-navy-800);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 24px 16px 48px;
+  }
+  .price-filter-inputs {
+    flex-direction: column;
+  }
+}

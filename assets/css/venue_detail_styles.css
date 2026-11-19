@@ -1,0 +1,823 @@
+/* ==========================================================================
+   VENUE DETAIL & KETERSEDIAAN VENUE STYLES
+   ========================================================================== */
+
+.main-content-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 40px 64px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--brand-navy-800);
+  font-weight: 600;
+}
+
+.breadcrumb span[aria-current="page"] {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Venue Gallery */
+.venue-gallery {
+  position: relative;
+  margin-bottom: 32px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--surface-subtle);
+}
+
+.venue-gallery img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+}
+
+.gallery-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(8, 31, 73, 0.85);
+  color: var(--text-inverse);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 10px 18px;
+  min-height: 42px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+/* Detail Content Grid */
+.venue-content-grid {
+  display: grid;
+  grid-template-columns: 1.85fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.venue-details-main {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-xs);
+}
+
+.venue-sports-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sport-tag {
+  background: var(--brand-sky-50);
+  color: var(--brand-navy-800);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sport-tag svg {
+  width: 16px;
+  height: 16px;
+}
+
+.venue-details-main h1 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.venue-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.venue-meta .rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.venue-meta .icon-star {
+  width: 16px;
+  height: 16px;
+  color: var(--star-amber);
+}
+
+.venue-section {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 24px;
+}
+
+.venue-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.venue-section p {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.rules-list {
+  list-style: decimal;
+  padding-left: 20px;
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.read-more-link,
+.btn-link-style {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: var(--brand-navy-800);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.location-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--surface-page);
+  border: 1px solid var(--border-subtle);
+  padding: 20px;
+  border-radius: var(--radius-md);
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.location-text strong {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.location-text span {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.map-link {
+  background: var(--surface-card);
+  border: 1px solid var(--border-strong);
+  color: var(--brand-navy-800);
+  padding: 10px 18px;
+  min-height: 42px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 13.5px;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.facility-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.facility-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--surface-page);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.facility-list svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-navy-800);
+  flex-shrink: 0;
+}
+
+/* Sticky Sidebar */
+.venue-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pricing-card,
+.benefits-card {
+  background: var(--surface-card);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.price-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.price-amount {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--brand-navy-900);
+  margin: 4px 0 8px 0;
+}
+
+.price-session {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.availability-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+}
+
+.btn-primary {
+  width: 100%;
+  min-height: 48px;
+  background: var(--brand-navy-800);
+  color: var(--text-inverse);
+  border: none;
+  padding: 13px 20px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.benefits-card h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.benefits-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefits-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.benefits-card svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-navy-800);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Membership Section */
+#membership-section {
+  margin-top: 40px;
+  padding-top: 32px;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.membership-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.slider-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.membership-slider {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 6px 2px 14px;
+}
+
+.membership-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.membership-card {
+  scroll-snap-align: start;
+  flex: 0 0 300px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.membership-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.membership-card ul {
+  list-style: disc;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.discount-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--status-success-text);
+  background: var(--status-success-bg);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.btn-buy {
+  background: var(--brand-navy-800);
+  color: var(--text-inverse);
+  border: none;
+  padding: 8px 16px;
+  min-height: 38px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color var(--dur-fast) ease;
+}
+
+/* Detail Modals */
+.detail-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 21, 51, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1600;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur-modal) var(--ease-out), visibility var(--dur-modal);
+}
+
+.detail-modal.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.detail-modal-content {
+  background: var(--surface-card);
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.95) translateY(8px);
+  transition: transform var(--dur-modal) var(--ease-out);
+}
+
+.detail-modal.is-visible .detail-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+.detail-modal-content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-right: 36px;
+}
+
+.detail-modal-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 18px 0 8px;
+}
+
+.detail-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  border: none;
+  font-size: 22px;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-preview-img {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   KETERSEDIAAN VENUE (COURT & TIME SLOT SELECTION)
+   ========================================================================== */
+.availability-page-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.back-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  padding: 10px 16px;
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-xs);
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out);
+}
+
+.availability-page-header h1 {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.availability-page-header p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.courts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.court-booking-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 32px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.court-image-slider {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.court-image-slider img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 360ms var(--ease-out);
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(8, 31, 73, 0.78);
+  color: var(--text-inverse);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+}
+
+.court-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.court-details h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.date-indicator {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--brand-navy-800);
+  background: var(--brand-sky-50);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.court-details .description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.court-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.feature-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-page);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.feature-item svg {
+  width: 15px;
+  height: 15px;
+  color: var(--brand-navy-800);
+}
+
+.schedule-dropdown {
+  background: var(--brand-navy-800);
+  color: var(--text-inverse);
+  border: none;
+  padding: 10px 18px;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+.schedule-dropdown .chevron {
+  transition: transform var(--dur-normal) var(--ease-out);
+}
+
+.schedule-dropdown.open .chevron {
+  transform: rotate(180deg);
+}
+
+.time-slots-grid {
+  display: none;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.time-slots-grid.open {
+  display: grid;
+  animation: cardEnter 240ms var(--ease-out) both;
+}
+
+.time-slot {
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  text-align: center;
+  background-color: var(--surface-card);
+  border: 1.5px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) ease, background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease;
+}
+
+.time-slot:not(:disabled):active {
+  transform: scale(0.96);
+}
+
+.time-slot .duration {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.time-slot .time {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.time-slot .price {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-navy-800);
+}
+
+.time-slot.booked {
+  background: var(--surface-subtle);
+  border-color: var(--border-subtle);
+  opacity: 0.7;
+}
+
+.time-slot.booked .time,
+.time-slot.booked .price {
+  color: var(--text-muted);
+}
+
+.time-slot.selected {
+  background: var(--brand-navy-800);
+  border-color: var(--brand-navy-800);
+  color: var(--text-inverse);
+  box-shadow: 0 6px 16px rgba(12, 58, 107, 0.25);
+}
+
+.time-slot.selected .duration,
+.time-slot.selected .time {
+  color: var(--text-inverse);
+}
+
+.time-slot.selected .price {
+  color: var(--accent-volt);
+}
+
+.empty-schedule-box {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+  text-align: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-btn:hover,
+  .btn-primary:hover,
+  .btn-buy:hover {
+    background-color: var(--brand-navy-900);
+    transform: translateY(-1px);
+  }
+  .map-link:hover,
+  .slider-nav-btn:hover,
+  .back-btn-pill:hover {
+    border-color: var(--brand-navy-800);
+    background-color: var(--brand-sky-50);
+  }
+  .time-slot.available:not(.selected):hover {
+    border-color: var(--brand-sky-500);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+  .court-image-slider:hover img {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 960px) {
+  .venue-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .venue-sidebar {
+    position: static;
+  }
+  .court-booking-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    padding: 20px 16px 48px;
+  }
+  .venue-gallery img {
+    height: 260px;
+  }
+  .venue-details-main {
+    padding: 22px 18px;
+  }
+}
